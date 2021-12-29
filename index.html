@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <title>ON.THE.WAY</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="menuToggle">
+        <input type="checkbox" id="checkbox" />
+        <div id="menu-box">
+          <span></span> <span></span> <span></span>
+        </div>
+
+        <ul id="menu">
+          <li id="home">HOME</li>
+          <li id="quiz">QUIZ</li>
+          <li id="personal">PERSONAL SPACE</li>
+          <li id="game">GAME</li>
+          <li id="about">ABOUT US</li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h1> Welcome to <br> ON.THE.WAY</h1>
+      <div id="btns">
+        <button type="button" id="btnstart"> START </button>
+        <button type="button" id="btnregister"> REGISTER </button>
+      </div>
+    </section>
+
+    <section id="registerpage">
+      <h1>REGISTER</h1>
+      <div class="">
+        <input class="log_box" type="text" id="nameinput" name="name" value="" placeholder="Name">
+        <input class="log_box" type="text" id="ageinput" name="age" value="" placeholder="Age">
+        <input class="log_box" type="text" id="jobinput" name="job" value="" placeholder="Profession">
+      </div>
+
+      <button type="button" name="button" id="savebtn">Save</button>
+    </section>
+
+    <section id="loginpage">
+      <h1>Choose Your Account</h1>
+      <select class="" name="user" id="selectUser"></select>
+
+      <button type="button" name="button" id="btnenter">ENTER</button>
+    </section>
+
+    <!-- secção com os circulos -->
+    <section id="bg-circles">
+      <div id='mouseCircle' class='div'></div>
+      <div id='mouseCircle1' class='div1'></div>
+      <div id='mouseCircle2' class='div2'></div>
+    </section>
+
+    <section id="mainpage">
+      <!-- RECORDS -->
+      <h2 id="username">error</h2>
+
+      <section id="records">
+        <button id="btnrecords">RECORDS</button>
+
+        <section id="records_day">
+        </section>
+
+      </section>
+    </section>
+
+    <!-- QUIZ PAGE -->
+
+    <section id="quizpage">
+      <h2 class="pagetitle"> QUIZ </h2>
+
+      <p class="pergunta"> What day is today? </p>
+      <textarea id="textareainput1" rows="1" cols="40" maxlength="50" style="resize: none"></textarea>
+      <!-- readonly ? -->
+
+      <p class="pergunta"> How are you feeling? </p>
+      <div id='section0'>
+        <!-- <div id='mouseCircle' class='div'></div> -->
+        <select class="selectColor" id="selectHowAreYouFeeling" onchange="changeColor(this)">
+          <option value=""></option>
+          <option value="#F7921E">Happy</option>
+          <option value="#990000">Confident</option>
+          <option value="#4C311E">Bored</option>
+          <option value="#136D00">Anxious</option>
+          <option value="#0093BA">Sad</option>
+
+        </select>
+      </div>
+
+      <p class="pergunta"> How did you sleep? </p>
+      <div id='section1'>
+        <!-- <div id='mouseCircle1' class='div1'></div> -->
+        <select class="selectColor1" id="selectHowDidYouSleep" onchange="changeColor1(this)">
+          <option value=""></option>
+          <option value="#C475B0">Very good</option>
+          <option value="#B2469E">Good</option>
+          <option value="#8E2577">Okay</option>
+          <option value="#6C1E5D">Bad</option>
+          <option value="#4A1B56">Very bad</option>
+
+        </select>
+      </div>
+
+      <p class="pergunta"> Did you exercised? </p>
+      <div id='section2'>
+        <!-- <div id='mouseCircle2' class='div2'></div> -->
+        <select class="selectColor2" id="selectDidYouExercised" onchange="changeColor2(this)">
+          <option value=""></option>
+          <option value="#81C341">A lot</option>
+          <option value="#BEC631">Yes</option>
+          <option value="#FFC200">A little bit</option>
+          <option value="#FF5B00">Maybe tomorrow</option>
+          <option value="#ED2024">No</option>
+
+        </select>
+      </div>
+
+      <p class="pergunta"> Describe your social interactions. </p>
+      <textarea id="textareainput2" rows="10" cols="40" maxlength="500" style="resize: none"></textarea>
+
+      <button type="button" name="button" id="savebtnQuiz">Save</button>
+
+    </section>
+
+    <section id="personalpage">
+      <h2 class="pagetitle"> PERSONAL SPACE </h2>
+      <div id="personal_box">
+
+        <p class="placeholder">This is your Personal Space. <br> Use this space to write about your day, your feelings,
+          or anything really.</p>
+        <button type="button" name="button" id="save-box">Save</button>
+
+        <div class="daily-entry">
+          <p class="p-date"></p>
+          <p class="personal-entry" contenteditable="false"> -> </p>
+          <!-- <textarea name="name" rows="8" cols="80"> > </textarea> -->
+        </div>
+
+        <section class="entradas">
+        </section>
+
+      </div>
+
+    </section>
+
+    <section id="aboutpage">
+      <h2 class="pagetitle"> ABOUT </h2>
+      <p class="text"> On The W.A.Y. is a project built for lorem ipsum dolor sit amet, consectetur adipiscing elit.
+        Vestibulum ligula libero, inter dum at rhoncus vulputate, dapibus eu nisl. Suspendisse potenti. Vestibulum
+        pellenoinyb tesque eget elit non commodo. Praesent a massa consequat lorem posuere ultrices a at eros.
+        Vestibulum commodo interdum justo non congue.
+        Sed tristique, nibh vel lobortis pellentesque, orci libero auctor elit, in sagittis dui tellus sed.
+      </p>
+    </section>
+
+  </main>
+
+  <script src="jquery-3.6.0.min.js" charset="utf-8"></script>
+  <script src="main.js" charset="utf-8"></script>
+</body>
+
+</html>
