@@ -1,0 +1,753 @@
+/* CSS Document */
+@media all {}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, b, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: normal;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*//////////////////////////////////////////////////// */
+:root {
+  --top: 2vh;
+}
+/* ON LOAD */
+html {
+  background-color: #b8b6b1;
+  font-family: 'Space Grotesk', sans-serif;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+/* DEFAULT */
+#intro {
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#registerpage, #loginpage, #mainpage, #aboutpage, #quizpage, #personalpage, #bg-circles {
+  display: none;
+}
+
+header {
+  display: none;
+  width: 100vw;
+  height: auto;
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#registerpage, #loginpage, #mainpage, #records, #quizpage, #personalpage, #aboutpage, #bg-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* sections titles */
+.pagetitle {
+  margin: 0;
+  padding: 0;
+  margin-top: 3px;
+  margin-bottom: 1.2em;
+  font-size: 2.1em;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  text-align: center;
+}
+/*//////////////////////////////////////////////////// */
+/*WELCOME*/
+h1 {
+  font-size: 10vw;
+  text-decoration: underline;
+  line-height: 1.9em;
+  color: white;
+  text-align: center;
+  margin-top: 5vw;
+}
+
+button {
+  background: none;
+  border: solid white 3px;
+  border-radius: 50px;
+}
+
+button:hover {
+  background: #D7D7D7;
+  border: none;
+}
+
+#btns {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: auto;
+  margin-top: 30%;
+}
+#btnstart, #btnregister {
+  border-radius: 50px;
+  margin-top: 7vw;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.7em;
+  color: white;
+  height: 3em;
+  cursor: pointer;
+}
+#btnstart:hover, #btnregister:hover {
+  background: #CCCCCC;
+  border: none;
+}
+
+#btnenter, #savebtn {
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  color: white;
+  font-size: 1.7em;
+  width: 50%;
+  height: 3em;
+  margin-left: 25%;
+  margin-top: 5vw;
+  border: solid white 3px;
+}
+
+select {
+  font-family: 'Space Grotesk', sans-serif;
+  border: none;
+  border-radius: 50px;
+  width: 30%;
+  height: 80px;
+  font-size: 20pt;
+  text-align: center;
+  margin-bottom: 10px;
+}
+#btnrecords {
+  font-family: 'Space Grotesk', sans-serif;
+  display: block;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+
+  position: relative;
+  top: -16vh;
+  height: 3em;
+
+  font-size: 1.7em;
+  color: white;
+  cursor: pointer;
+  border: solid white 3px;
+  border-radius: 50px;
+}
+
+#btnrecords:hover {
+  background: #CCCCCC87;
+  border: none;
+}
+/*//////////////////////////////////////////////////// */
+/*PAG. INICIAL*/
+/*MENU*/
+
+/* USERNAME */
+#mainpage h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-top: 1vw;
+}
+
+#menuToggle {
+  display: block;
+  position: absolute;
+  top: var(--top);
+  left: var(--top);
+  z-index: 1;
+}
+#menuToggle li {
+  text-decoration: none;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30pt;
+  padding: 10px 0;
+}
+#menuToggle li:hover {
+  text-decoration: underline 3px;
+}
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+}
+/*HAMBURGUER*/
+#menu-box span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: white;
+  z-index: 1;
+  transform-origin: 4px 0px;
+}
+#menuToggle input:checked ~ #menu-box span:nth-last-child(2) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menuToggle input:checked ~ #menu-box span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+#menu {
+  position: absolute;
+  width: 120vw;
+  height: 120vh;
+  box-sizing: border-box;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #b8b6b1;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+}
+/* fazer slide */
+#menuToggle input:checked ~ ul {
+  transform: none;
+}
+/*HAMBURGUER*/
+#menu-box span {
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  background: white;
+}
+#records {
+  position: absolute;
+  top: 100vh;
+  transition: all .4s;
+  transition-timing-function: ease-out;
+}
+
+#mainpage {
+  overflow-y: scroll;
+}
+/*//////////////////////////////////////////////////// */
+/*REGISTER PAGE*/
+#registerpage {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.log_box {
+  background: #CCCCCC;
+  border: none;
+  border-radius: 50px;
+  height: 2em;
+  width: 70%;
+  margin-left: 15%;
+  margin-top: 5vw;
+}
+
+#nameinput, #ageinput, #jobinput {
+  font-size: 25pt;
+  color: white;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  padding-top: 5px;
+}
+
+/* LOGIN PAGE */
+h3 {
+  font-size: 25pt;
+  color: white;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-left: 600px;
+}
+.text {
+  font-size: 16pt;
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  margin-left: 40px;
+  margin-top: 50px;
+  margin-right: 40px;
+}
+#selectUser {
+  font-family: 'Inter', sans-serif;
+  border: none;
+  border-radius: 50px;
+  width: 80%;
+  height: 3em;
+  font-size: 1.7em;
+  text-align: center;
+  margin-left: 10%;
+  background: #CCCCCC;
+  color: white;
+}
+
+.register-boxes {
+  margin-top: 10vh;
+}
+
+.login-boxes {
+  margin-top: 25vh;
+}
+/*//////////////////////////////////////////////////// */
+/*RECORDS*/
+
+.daily-entry {
+  margin-left: 5%;
+}
+
+.view {
+  display: flex;
+  justify-content: space-around;
+  padding-left: 6%;
+  padding-right: 6%;
+  margin-top: 80vh;
+}
+
+#daily-view, #weekly-view {
+  border-radius: 50px;
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  font-size: 1.6em;
+  cursor: pointer;
+  text-align: center;
+
+  position: relative;
+  top: -80vh;
+  height: 3em;
+  width: 40%;
+}
+
+#daily-view:hover, #weekly-view:hover {
+  background: #CCCCCC87;
+  border: none;
+}
+
+#records {
+  height: auto;
+}
+
+#records_day {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  border: none;
+
+  margin-top: -75vh;
+  font-size: 1.2em;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: fit-content;
+  width: 90%;
+  box-sizing: border-box;
+}
+
+.newRecord {
+  padding-top: 0.8em;
+  background: rgba(201, 201, 201, 0.5);
+  border-radius: 20px;
+  padding: 2%;
+  padding-right: 1.5em;
+}
+
+.newRecord p {
+  margin-bottom: 0.2em;
+  word-break: break-word;
+}
+
+.q-date {
+  margin-top: 0.2em;
+  margin-left: 1.5em;
+}
+
+.newRecord p:nth-child(2) {
+  margin-top: 0.8em;
+}
+
+.newRecord p:nth-child(2), .newRecord p:nth-child(6) {
+  margin-left: 1.6em;
+}
+
+.box {
+  background: #CCCCCC;
+  border: none;
+  border-radius: 20px;
+  height: 120px;
+}
+.entradas {
+  font-size: 1.2em;
+  color: white;
+  text-align: left;
+  margin-left: 2%;
+  margin-top: 4%;
+}
+
+
+/*//////////////////////////////////////////////////// */
+/*PERSONAL SPACE*/
+#personalpage {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  overflow-y: auto;
+}
+#personal_box {
+  background: rgba(201, 201, 201, 0.5);
+  border: none;
+  border-radius: 20px;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+  height: fit-content;
+  width: 90%;
+  box-sizing: border-box;
+  padding: 4%;
+  font-size: 1.2em;
+}
+[contenteditable="true"]:active, [contenteditable="true"]:focus {
+  border: none;
+  outline: none;
+}
+.placeholder {
+  margin-bottom: 2em;
+  line-height: 1.4em;
+  font-size: 1em;
+  padding-left: 2%;
+  padding-top: 2%;
+}
+.personal-entry {
+  word-break: break-word;
+  cursor: text;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 2em;
+  position: relative;
+  left: -0.5em;
+  font-size: 1.2em;
+}
+
+.new-entry {
+  margin-bottom: 1em;
+  padding-top: 0.7em;
+  border-top: solid 1px lightgrey;
+  word-break: break-word;
+}
+
+.p-date {
+  font-size: 0.7em;
+  margin-bottom: 0.5em;
+}
+
+#save-box {
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  color: white;
+  font-size: 1.5em;
+  width: 60%;
+  height: 2.8em;
+  margin-left: 20%;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  border: solid white 3px;
+
+}
+
+#savebtnQuiz {
+  font-family: 'Space Grotesk', sans-serif;
+  cursor: pointer;
+  color: white;
+  font-size: 1.7em;
+  width: 50%;
+  height: 3em;
+  margin-left: 25%;
+  margin-top: 10vw;
+  margin-bottom: 10vw;
+  border: solid white 3px;
+}
+
+#savebtn:hover, #btnenter:hover, #save-box:hover, #savebtnQuiz:hover {
+  background: #CCCCCC87;
+  border: none;
+}
+
+
+/*//////////////////////////////////////////////////// */
+/*QUIZ*/
+
+#weekly-circles div {
+  position: fixed;
+  width: 10em;
+  height: 10em;
+  margin: -60px -100px 0px -75px;
+  border-radius: 70%;
+  filter: blur(1.7rem); /* Efeito de cor difusa */
+  opacity: 0.8;
+}
+#quizpage {
+  font-family: 'Inter', sans-serif;
+  color: white;
+  overflow-y: scroll;
+}
+.pergunta {
+  font-size: 1.2em;
+  text-align: center;
+  text-decoration: underline;
+  margin-bottom: 0.8em;
+}
+
+.box_respostas {
+  background: #CCCCCC87;
+  border: none;
+  border-radius: 50px;
+  height: 4em;
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 2em;
+  margin-bottom: 6vw;
+}
+
+#textareainput1, #textareainput2 {
+  word-break: break-word;
+  cursor: text;
+  display: inline-block;
+  width: 100%;
+  /* padding: 1.2em; */
+  padding-top: 0.8em;
+  padding-left: 1.2em;
+  padding-bottom: 0.8em;
+}
+
+.selectColor, .selectColor1, .selectColor2 {
+  outline: none;
+  background: #b8b6b1;
+  border: none;
+  border-radius: 50px;
+  width: 68vw;
+  height: 4em;
+  color: white;
+  font-size: 1em;
+  font-family: 'Inter', sans-serif;
+}
+
+.selectColor option, .selectColor1 option, .selectColor2 option {
+  background: #b8b6b1;
+}
+
+#section0, #section1, #section2 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4vw;
+}
+
+.newRecord {
+  margin-bottom: 1.5em;
+}
+#selectHowAreYouFeeling, #selectHowDidYouSleep, #selectDidYouExercised {
+  background: #CCCCCC87;
+}
+
+
+/*//////////////////////////////////////////////////// */
+/*ABOUT*/
+
+.text_1 {
+  font-size: 1.2em;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  line-height: 1.4em;
+  margin-top: 15%;
+  padding-left: 15%;
+  padding-right: 15%;
+  color: white;
+}
+
+.text_1:last-of-type {
+  padding-bottom: 5%;
+}
+
+
+/*//////////////////////////////////////////////////// */
+/*CIRCLES*/
+
+.div, .div1, .div2 {
+  position: fixed;
+  width: 50em; /* Diâmetro do círculo */
+  height: 50em; /* Diâmetro do círculo */
+  margin: -60px -100px 0px -75px;
+  border-radius: 70%;
+  filter: blur(3rem); /* Efeito de cor difusa */
+  opacity: 0.8;
+}
+
+/*//////////////////////////////////////////////////// */
+/*RESPONSIVE*/
+
+@media only screen and (max-width: 400px) {
+  .pagetitle {
+    margin: 0;
+    padding: 0;
+    margin-top: 6px;
+    margin-bottom: 1.2em;
+    font-size: 1.8em;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+
+  h1 {
+    font-size: 3.5vw;
+    line-height: 1.5em;
+    margin-top: 5vw;
+  }
+
+  #btns {
+  width: 25%;
+  margin-top: 3vw;
+}
+
+#btnstart, #btnregister {
+  margin-top: 3.5vw;
+  font-size: 1.7em;
+  height: 3em;
+}
+
+#btnenter, #savebtn {
+  width: 25%;
+  margin-left: 37.5%;
+  margin-top: 3.5vw;
+}
+
+#selectUser {
+  width: 40%;
+  margin-left: 30%;
+}
+
+.log_box {
+  height: 2em;
+  width: 40%;
+  margin-left: 30%;
+  margin-top: 1.5vw;
+}
+
+.register-boxes {
+  margin-top: 2vw;
+}
+
+#btnrecords {
+  width: 25%;
+}
+
+/* QUIZ */
+#savebtnQuiz {
+  font-size: 1.7em;
+  width: 25%;
+  margin-left: 37.5%;
+  margin-top: 3vw;
+  margin-bottom: 3vw;
+}
+
+.box_respostas {
+  width: 40%;
+  margin-bottom: 2.2vw;
+}
+
+.selectColor, .selectColor1, .selectColor2 {
+  width: 42%;
+}
+
+#section0, #section1, #section2 {
+  margin-bottom: 2.2vw;
+}
+
+.view {
+  display: flex;
+  justify-content: center;
+}
+
+#daily-view, #weekly-view {
+  width: 25%;
+}
+
+#daily-view {
+  margin-right: 1em;
+}
+
+#save-box {
+  width: 25%;
+  height: 2.8em;
+  margin-left: 37.5%;
+  margin-top: 10vw;
+  margin-bottom: 3vw;
+}
+
+.personal-entry {
+  margin-bottom: 2em;
+  position: relative;
+  left: -1.2em;
+  font-size: 1.2em;
+}
+
+#personal_box {
+  font-size: 1em;
+}
+
+.placeholder {
+  font-size: 1.2em;
+}
+
+/* ABOUT */
+
+.text_1 {
+  font-size: 1.2em;
+  line-height: 1.4em;
+  margin-top: 4vw;
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.text_1:last-of-type {
+  padding-bottom: 0;
+}
+}
